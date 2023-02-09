@@ -1,0 +1,23 @@
+name: Build and deploy
+
+on: [push]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest 
+    steps:
+    - name: 'Checkout the source code from GitHub'
+      uses: actions/checkout@v3
+    - name: 'Create dist directory'
+      run: mkdir -p dist
+    - name: 'Build sprites'
+      run: ./sprites/build.sh ./dist/sprites
+    - name: 'Build glyphs'
+      run: ./glyphs/build.sh ./dist/glyphs
+    - name: 'Deploy'
+      if: ${{ github.ref == 'refs/heads/master' }}
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        cname: assets.arma.place
+        publish_dir: ./dist
