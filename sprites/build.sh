@@ -40,6 +40,6 @@ for directory in $inDir/*/; do
             echo "📄 Building spritesheet \"$name\""
         fi
 
-        $inDir/spreet --unique --minify-index-file --ratio $ratio $directory $outDir/$outName
+        $inDir/spreet --recursive --unique --minify-index-file --ratio $ratio $directory $outDir/$outName
     done
 done
