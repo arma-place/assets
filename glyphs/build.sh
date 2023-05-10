@@ -29,5 +29,5 @@ for fontFile in $inDir/*.ttf; do
     mkdir -p $outDir/$name
 
     echo "🔠 Building glyphs \"$name\""
-    npm exec --yes --package=fontnik build-glyphs $fontFile $outDir/$name
+    npm exec --yes --package=fontnik@0.7.2 build-glyphs $fontFile $outDir/$name
 done
