@@ -1,7 +1,7 @@
 # Spritesheets
 
 This directory contains several subdirectories, each of which is bundled into a separate spritesheet.  
-E.g. icons contained in the subdirectory `default` are bundled in the spritesheet `https://assets.arma.place/sprites/default`.
+E.g. icons contained in the subdirectory `foo` would be bundled into the spritesheet `https://assets.arma.place/sprites/foo`.
 
 You can read more about spritesheet in the [mapbox style specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/sprite/).
 
@@ -20,7 +20,7 @@ Although this aspect ratio and size is not a hard limitation, it is recommended 
 
 To add a single sprite, simply add the SVG file with the desired name in the directory.
 
-It is possible to divide sprites into categories, by adding them in sub-directories of your spritesheet directory. For example, the file `default/locations/rockarea.svg` will be accessible in the spritesheet `default` as `locations/rockarea`.
+It is possible to divide sprites into categories, by adding them in sub-directories of your spritesheet directory. For example, the file `foo/locations/rockarea.svg` will be accessible in the spritesheet `foo` as `locations/rockarea`.
 
 At the moment it is not possible to add sprites with `content`, `stretchX` and `stretchY` properties.
 
